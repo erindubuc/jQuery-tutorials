@@ -1,15 +1,14 @@
-var button = $("#lead-banner a");
+var myLis = $("#points-of-sale li");
 
-button[0].onclick = function() {
+myLis.on("click", function() {
     
-  $("#points-of-sale").toggleClass("open");
-  return false;
+    $(this).css({"background" : "pink"});
     
-};
+    myLis.off("click");
+})
 
 
 /*
-removeClass() removes a class from the matched element(s)
-addClass() adds a class to the matched element(s)
-toggleClass() toggles the class on and off on the matched element(s)
+on() binds an event to matched element(s)
+off() unbinds an event from matched element(s)
 */
