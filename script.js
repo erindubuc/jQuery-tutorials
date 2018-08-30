@@ -1,10 +1,25 @@
+
+/*global $*/
 $(document).ready(function() {
   
-  $(".slide-button-up").on("click", function() {
-      $("#lead-banner").slideToggle(1000);
-  });
-  
-   });
-// slideUp() moves the element up the page
-// slideDown() moves the element down or back down
-// slideToggle() lets you use the same element to slide up and then down when clicked
+    var allQuotes = $("blockquote");
+    var currentQuote = 0;
+    
+    function changeQuote() {
+        
+        $(allQuotes[currentQuote]).fadeOut(200, function() {
+            
+           if (currentQuote == allQuotes.length -1) {
+            currentQuote = 0;
+            } else {
+            currentQuote++;
+            }
+        
+            $(allQuotes[currentQuote]).fadeIn(200);
+        
+        });
+        
+    }  
+    
+    var quoteTimer = setInterval(changeQuote, 3000);
+})
