@@ -2,24 +2,10 @@
 /*global $*/
 $(document).ready(function() {
   
-    var allQuotes = $("blockquote");
-    var currentQuote = 0;
+    var items = $("#points-of-sale li");
     
-    function changeQuote() {
-        
-        $(allQuotes[currentQuote]).fadeOut(200, function() {
-            
-           if (currentQuote == allQuotes.length -1) {
-            currentQuote = 0;
-            } else {
-            currentQuote++;
-            }
-        
-            $(allQuotes[currentQuote]).fadeIn(200);
-        
-        });
-        
-    }  
-    
-    var quoteTimer = setInterval(changeQuote, 3000);
-})
+    items.on("click", function() {
+        // want to bind click functions to li items
+        $(this).find("p").slideToggle(500);
+    });
+});
