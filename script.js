@@ -2,15 +2,12 @@ $(document).ready(function() {
    function complete() {
        alert("Animation complete");
    }
-   $("section > h2").on("click", function(){
-    // fadeOut() fades out and completely disappears from page 
-  $(this).fadeTo(200, 0.2) 
-         .fadeTo(200, 0.8)
-         .fadeTo(200, 0.2) 
-         .fadeTo(200, 0.8)
-         .fadeTo(200, 0.2) 
-         .fadeTo(200, 0.8);
-
+   $("img[alt=map]").on("click", function(){
+   
+        $("section > h2").toggle(1000);
+            // toggle fades element in or out, depending on its current state
+            // shows/hides too
+            // NOT the same as toggle class which changes the class of an element!!!!
    
    });
 });
